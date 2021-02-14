@@ -1,0 +1,15 @@
+.card {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 220px;
+  
+    margin: 20px;
+    background: #f4f4f4;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .alignElements {
+    margin: 20px
+  }

@@ -1,25 +1,56 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { fetchCountry } from './services/fetchDatas'
+
+
+// IMPORT COMPONENTS
+import Cards from './components/Cards'
+import LogoCovid from "./images/logo.png"
+import Chart from './components/Chart'
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+function App(){
+    const [load, setLoad] = useState(false)
+    
+    const changeDataApi = async () => {
+        const res = await fetchCountry('brazil')
+        console.log('resee',res)
+        setLoad(res)
+    }
+
+    useEffect(() => {
+        changeDataApi() 
+    }, [])
+
+    if(!load) {
+        return (
+        <h1>LOADING...</h1>
+        )
+    } else {
+        return (
+            <>
+            <div className="container">
+                <header>
+                <img src={LogoCovid} alt="logo"/>
+                </header>
+    
+                <section className="cards-container">
+                <Cards data={load} />
+                </section>
+
+                <section className="chart-container">
+
+                <Chart />
+                </section>
+            </div>
+
+           
+            </>
+        )
+    }
+
 }
 
 export default App;
