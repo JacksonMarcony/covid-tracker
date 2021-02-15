@@ -7,6 +7,8 @@ import Cards from './components/Cards'
 import LogoCovid from "./images/logo.png"
 import Chart from './components/Chart'
 
+import DropDown from './components/DropDown'
+
 import './App.css';
 
 
@@ -14,14 +16,15 @@ import './App.css';
 function App(){
     const [load, setLoad] = useState(false)
     
-    const changeDataApi = async () => {
-        const res = await fetchCountry('brazil')
-        console.log('resee',res)
+
+    const changeDataApi = async (country) => {
+        const res = await fetchCountry(country)
+        console.log('resssssssee',res)
         setLoad(res)
     }
 
     useEffect(() => {
-        changeDataApi() 
+        changeDataApi('brazil') 
     }, [])
 
     if(!load) {
@@ -30,24 +33,24 @@ function App(){
         )
     } else {
         return (
-            <>
+            
             <div className="container">
                 <header>
-                <img src={LogoCovid} alt="logo"/>
+                    <img src={LogoCovid} alt="logo"/>
                 </header>
     
                 <section className="cards-container">
-                <Cards data={load} />
+                    <Cards data={load} />
                 </section>
 
-                <section className="chart-container">
+                <DropDown changeDataApi={changeDataApi} />
 
-                <Chart />
+                <section className="chart-container">
+                    <Chart data={load} />
                 </section>
             </div>
 
            
-            </>
         )
     }
 

@@ -1,20 +1,26 @@
 import React from 'react'
 import { HorizontalBar } from '@reactchartjs/react-chart.js'
 
-const data = {
-    labels: ['Confirmados', 'Infectados', 'Curados', 'Mortes'],
+
+  
+  
+
+const Chart = (props) => {
+
+  const data = {
+    labels: ['Confirmed', 'Infected', 'Recovered', 'Deaths'],
     datasets: [
       {
-        label: ['Confirmados', 'Infectados', 'Curados', 'Mortes'] ,
-        data: [9713909 ,794935, 8682773, 236201],
+        label: ['Cases'] ,
+        data: [props.data["confirmed"] ,props.data["cases"], props.data["recovered"], props.data["deaths"]],
         backgroundColor: [
-            'rgba(255, 206, 86, 0.2)',
+            'rgba(0, 200, 255, 0.2)',
             'rgba(0, 0, 255, 0.2)',
             'rgba(0, 255, 0, 0.2)',
             'rgba(255, 0, 0, 0.2)',
         ],
         borderColor: [
-            'rgba(255, 206, 86, 1)',
+            'rgba(0, 200, 255, 1)',
             'rgba(0, 0, 255, 1)',
             'rgba(0, 255, 0, 1)',
             'rgba(255, 0, 0, 1)',
@@ -23,10 +29,10 @@ const data = {
       },
     ],
   }
-  
+
   const options = {
     legend: { display: false },
-    title: { display: true, text: `Estado atual do Covid: Brasil `, fontSize: 30 },
+    title: { display: true, text: `Current state in ${props.data["country"]} `, fontSize: 30 },
     scales: {
       yAxes: [
         {
@@ -38,7 +44,6 @@ const data = {
     },
   }
 
-const Chart = () => {
   return(
   <>
     <HorizontalBar 

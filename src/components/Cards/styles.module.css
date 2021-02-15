@@ -1,5 +1,6 @@
 .confirmed {
-    border-bottom: 10px solid rgba(255, 206, 86, 0.5);
+    /* border-bottom: 10px solid rgba(255, 206, 86, 0.5); */
+    border-bottom: 10px solid rgba(0, 200, 255, 0.5);
 }
 
 .infected {

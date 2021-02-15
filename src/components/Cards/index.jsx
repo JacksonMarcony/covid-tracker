@@ -8,31 +8,31 @@ export default function Cards(props) {
         <>
         <Card
             className={styles.confirmed}
-            title="Confirmados"
+            title="Confirmed"
             cases={props.data["confirmed"]}
             date={props.data["updated_at"]}
-            subTitle="Pessoas confirmados do covid19"
+            subTitle="Number of confirmed cases from COVID-19."
           />
         <Card
             className={styles.infected}
-            title="Infectados"
+            title="Infected"
             cases={props.data["cases"]}
             date={props.data["updated_at"]}
-            subTitle="Pessoas infectadas pelo covid19"
+            subTitle="Number of active cases from COVID-19."
           />
           <Card
             className={styles.recovered}
-            title="Curados"
+            title="Recovered"
             cases={props.data["recovered"]}
             date={props.data["updated_at"]}
-            subTitle="Pessoas curadas do covid19"
+            subTitle="Number of recoveries from COVID-19."
           />
           <Card
             className={styles.deaths}
-            title="Mortes"
+            title="Deaths"
             cases={props.data["deaths"]}
             date={props.data["updated_at"]}
-            subTitle="Pessoas mortas pelo covid19"
+            subTitle="Number of deaths caused by COVID-19."
           />
         </>
     )
