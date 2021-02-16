@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { HorizontalBar } from '@reactchartjs/react-chart.js'
 
 
@@ -6,14 +6,6 @@ import { HorizontalBar } from '@reactchartjs/react-chart.js'
   
 
 const Chart = (props) => {
-  const [heightChart, setHeightChart] = useState()
-
-  useEffect(() => {
-    if (window.innerWidth > 950) {
-      setHeightChart(100) 
-    }
-  }, [])
-
   const data = {
     labels: ['Confirmed', 'Infected', 'Recovered', 'Deaths'],
     datasets: [
@@ -55,7 +47,7 @@ const Chart = (props) => {
   <>
     <HorizontalBar 
       width={500}
-      height={heightChart}
+      height={150}
       data={data} 
       options={options} />
   </>
