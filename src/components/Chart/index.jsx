@@ -30,6 +30,7 @@ const Chart = (props) => {
   }
 
   const options = {
+    maintainAspectRatio: false, 
     legend: { display: false },
     title: { display: true, text: `Current state in: ${props.data["country"]} `, fontSize: 30 },
     scales: {
@@ -45,11 +46,12 @@ const Chart = (props) => {
 
   return(
   <>
+  <div className="container-chart-global">
     <HorizontalBar 
-      width={500}
-      height={150}
+      height={350}
       data={data} 
       options={options} />
+  </div>
   </>
 )}
 
