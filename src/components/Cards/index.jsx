@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 export default function Cards(props) {
   console.log('pops',props.data)
     return (
-        <>
+      <section className="cards-container">
         <Card
             className={styles.confirmed}
             title="Confirmed"
@@ -34,6 +34,6 @@ export default function Cards(props) {
             date={props.data["updated_at"]}
             subTitle="Number of deaths caused by COVID-19."
           />
-        </>
+        </section>
     )
 }

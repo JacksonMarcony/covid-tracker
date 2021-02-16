@@ -25,6 +25,7 @@ function App(){
 
     useEffect(() => {
         changeDataApi('brazil') 
+        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', window.innerWidth)
     }, [])
 
     if(!load) {
@@ -39,9 +40,8 @@ function App(){
                     <img src={LogoCovid} alt="logo"/>
                 </header>
     
-                <section className="cards-container">
+                
                     <Cards data={load} />
-                </section>
 
                 <DropDown changeDataApi={changeDataApi} />
 
