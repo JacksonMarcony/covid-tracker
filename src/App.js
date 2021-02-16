@@ -5,6 +5,7 @@ import { fetchCountry } from './services/fetchDatas'
 // IMPORT COMPONENTS
 import Cards from './components/Cards'
 import LogoCovid from "./images/logo.png"
+import Infinity from "./images/infinity.svg"
 import Chart from './components/Chart'
 
 import DropDown from './components/DropDown'
@@ -30,7 +31,12 @@ function App(){
 
     if(!load) {
         return (
-        <h1>LOADING...</h1>
+        <>
+            <div className="loading">
+                <h1> LOADING...</h1>
+                <img src={Infinity} alt="infinity" />
+            </div>
+        </>
         )
     } else {
         return (

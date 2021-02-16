@@ -10,6 +10,14 @@ header {
   margin-top: 30px;
 }
 
+.loading {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background-color: #fafafa;
+  align-items: center;
+}
+
 img {
   align-self: center;
 }
